@@ -1,6 +1,6 @@
 // Parte IV – Caso integrador
 db = db.getSiblingDB("tiendaDB");
-
+//Antes de tu consulta, define las fechas:
 const hoy = new Date();
 const hace30dias = new Date();
 hace30dias.setDate(hoy.getDate() - 30);
@@ -19,7 +19,7 @@ db.createView(
 print("👉 Pedidos de los últimos 30 días:");
 db.pedidosUltimos30Dias.find().pretty();
 
-// 2. Crear índice recomendado
+// 2. Crear índice recomendado: esto crea un índice compuesto que funciona como el índice de un libro.
 print("2️⃣ Creando índice en pedidos (fecha + estado)");
 db.pedidos.createIndex({ fecha: 1, estado: 1 });
 
