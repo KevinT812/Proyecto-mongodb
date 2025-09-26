@@ -1,1 +1,88 @@
-exit
+db.pedidos.find({ fecha: { $gte: hace30dias }, estado: "pendiente" }).pretty();
+print("3️⃣ Pedidos pendientes en los últimos 30 días");
+db.pedidos.createIndex({ fecha: 1, estado: 1 });
+print("2️⃣ Creando índice en pedidos (fecha + estado)");
+db.pedidosUltimos30Dias.find().pretty();
+print("👉 Pedidos de los últimos 30 días:");
+);
+  ]
+    { $match: { fecha: { $gte: hace30dias } } }
+  [
+  "pedidos",
+  "pedidosUltimos30Dias",
+db.createView(
+print("1️⃣ Creando vista pedidosUltimos30Dias");
+hace30dias.setDate(hoy.getDate() - 30);
+const hace30dias = new Date();
+const hoy = new Date();
+db.pedidosActivos.find().pretty();
+print("👉 Pedidos Activos:");
+);
+  ]
+    { $match: { estado: { $in: ["pendiente", "enviado"] } } }
+  [
+  "pedidos",
+  "pedidosActivos",
+db.createView(
+]);
+  { cliente: "Carla", estado: "cancelado", fecha: new Date("2025-08-25") }
+  { cliente: "Juan", estado: "pendiente", fecha: new Date("2025-09-03") },
+  { cliente: "María", estado: "entregado", fecha: new Date("2025-08-28") },
+  { cliente: "Luis", estado: "enviado", fecha: new Date("2025-09-02") },
+  { cliente: "Ana", estado: "pendiente", fecha: new Date("2025-09-01") },
+db.pedidos.insertMany([
+print("2️⃣ Insertando pedidos de ejemplo");
+db.clientesVIP.find().pretty();
+print("👉 ClientesVIP:");
+);
+  ]
+    { $match: { promedioCompras: { $gt: 500 } } }
+    },
+      }
+        promedioCompras: { $avg: "$compras" }
+        edad: 1,
+        pais: 1,
+        nombre: 1,
+      $project: {
+    {
+  [
+  "clientes",
+  "clientesVIP",
+db.createView(
+]);
+  }
+    }
+      promedioCompras: { $avg: "$compras" }
+      nombre: 1,
+      _id: 0,
+    $project: {
+  {
+db.clientes.aggregate([
+print("2️⃣ Nombre y promedio de compras de cada cliente");
+).pretty();
+  { pais: "México", edad: { $gt: 25 } }
+db.clientes.find(
+print("1️⃣ Clientes de México mayores de 25 años");
+]);
+  { nombre: "Tomás",   edad: 41, pais: "España",compras: [800, 950, 400] }
+  { nombre: "Isabel",  edad: 32, pais: "México",compras: [600, 500, 700] },
+  { nombre: "Felipe",  edad: 37, pais: "Argentina", compras: [450, 550] },
+  { nombre: "Camila",  edad: 29, pais: "México",compras: [300, 200, 100] },
+  { nombre: "Héctor",  edad: 42, pais: "México",compras: [900, 1100] },
+  { nombre: "Paula",   edad: 36, pais: "Chile", compras: [250, 300, 400] },
+  { nombre: "Javier",  edad: 30, pais: "México",compras: [500, 600] },
+  { nombre: "Valeria", edad: 25, pais: "Perú",  compras: [150, 180] },
+  { nombre: "Mateo", edad: 38, pais: "México",  compras: [700, 400, 900] },
+  { nombre: "Elena", edad: 33, pais: "México",  compras: [200, 350, 500] },
+  { nombre: "Andrés",edad: 26, pais: "Colombia", compras: [320, 480] },
+  { nombre: "Lucía", edad: 34, pais: "España",  compras: [600, 750, 300] },
+  { nombre: "Diego", edad: 29, pais: "México",  compras: [150, 400, 250] },
+  { nombre: "Sofía", edad: 27, pais: "Argentina", compras: [220, 340] },
+  { nombre: "Pedro", edad: 45, pais: "México",  compras: [1000, 900, 850] },
+  { nombre: "Carla", edad: 31, pais: "Chile",   compras: [500, 200, 100] },
+  { nombre: "Juan",  edad: 40, pais: "México",  compras: [800, 1200, 600] },
+  { nombre: "María", edad: 22, pais: "España",  compras: [200, 300] },
+  { nombre: "Luis",  edad: 35, pais: "México",  compras: [400, 700, 150] },
+  { nombre: "Ana",   edad: 28, pais: "México",  compras: [120, 350, 600] },
+db.clientes.insertMany([
+use tiendaDB
