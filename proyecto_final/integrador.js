@@ -1,6 +1,6 @@
 // Parte IV – Caso integrador
 db = db.getSiblingDB("tiendaDB");
-//Antes de tu consulta, define las fechas:
+//Antes de tu consulta, definir las fechas:
 const hoy = new Date();
 const hace30dias = new Date();
 hace30dias.setDate(hoy.getDate() - 30);
